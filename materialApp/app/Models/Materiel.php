@@ -9,6 +9,9 @@ class Materiel extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'Num_ordre';
+
+
     protected $fillable = [
         'departement',
         'categorie',

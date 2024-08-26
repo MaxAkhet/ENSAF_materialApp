@@ -36,13 +36,13 @@
 
         <x-sidebar.sublink title="Ajout de materiel" href="{{ route('materiels.ajouter') }}"
             :active="request()->routeIs('materiels.ajouter')" />
-        <x-sidebar.sublink title="Modification de materiel" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
-        <x-sidebar.sublink title="Supression de materiel" href="{{ route('buttons.text-icon') }}"
-            :active="request()->routeIs('buttons.text-icon')" />
+        <x-sidebar.sublink title="Modification de materiel" href="{{ route('materiels.select')  }}"
+            :active="request()->routeIs('materiels.edit' )" />
+        <x-sidebar.sublink title="Supression de materiel" href="{{ route('materiels.delselect') }}"
+            :active="request()->routeIs('materiels.delselect')" />
     </x-sidebar.dropdown>
 
-    <x-sidebar.dropdown title="Rechercher" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+    {{-- <x-sidebar.dropdown title="Rechercher" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
@@ -53,9 +53,9 @@
             :active="request()->routeIs('buttons.icon')" />
         <x-sidebar.sublink title="Par categorie" href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')" />
-    </x-sidebar.dropdown>
+    </x-sidebar.dropdown> --}}
 
-    <x-sidebar.dropdown title="Statistiques" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+    {{-- <x-sidebar.dropdown title="Statistiques" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
@@ -65,6 +65,6 @@
         <x-sidebar.sublink title="Cout par Categorie" href="{{ route('buttons.icon') }}"
             :active="request()->routeIs('buttons.icon')" />
         
-    </x-sidebar.dropdown>
+    </x-sidebar.dropdown> --}}
        
 </x-perfect-scrollbar>

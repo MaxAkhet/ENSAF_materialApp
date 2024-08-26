@@ -29,16 +29,26 @@ Route::get('/dashboard', function () {
 //     return view('buttons-showcase.text');
 // })->middleware(['auth'])->name('buttons.text');
 
-Route::get('/buttons/icon', function () {
-    return view('buttons-showcase.icon');
-})->middleware(['auth'])->name('buttons.icon');
+// Route::get('/buttons/icon', function () {
+//     return view('buttons-showcase.icon');
+// })->middleware(['auth'])->name('buttons.icon');
 
-Route::get('/buttons/text-icon', function () {
-    return view('buttons-showcase.text-icon');
-})->middleware(['auth'])->name('buttons.text-icon');
+// Route::get('/buttons/text-icon', function () {
+//     return view('buttons-showcase.text-icon');
+// })->middleware(['auth'])->name('buttons.text-icon');
 
+// Ajout de materiel
 Route::get('/materiels/create', [MaterielController::class, 'create'])->name('materiels.ajouter');
-
 Route::post('/materiels', [MaterielController::class, 'store'])->name('materiels.store');
+
+//Modification de materiel
+Route::get('/materiels/select', [MaterielController::class, 'select'])->name('materiels.select');
+Route::get('/materiels/{num_ordre}/edit', [MaterielController::class, 'edit'])->name('materiels.edit');
+Route::put('/materiels/{num_ordre}', [MaterielController::class, 'update'])->name('materiels.update');
+
+// Suppression de materiel
+Route::get('/materiels/delselect', [MaterielController::class, 'delselect'])->name('materiels.delselect');
+Route::delete('/materiels/{num_ordre}', [MaterielController::class, 'destroy'])->name('materiels.destroy');
+
 
 require __DIR__ . '/auth.php';
