@@ -42,29 +42,36 @@
             :active="request()->routeIs('materiels.delselect')" />
     </x-sidebar.dropdown>
 
-    {{-- <x-sidebar.dropdown title="Rechercher" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+
+
+    {{-- RECHERCHE --}}
+
+    <x-sidebar.dropdown title="Rechercher" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Par Date" href="{{ route('materiels.ajouter') }}"
-            :active="request()->routeIs('buttons.text')" />
-        <x-sidebar.sublink title="Par designation" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
-        <x-sidebar.sublink title="Par categorie" href="{{ route('buttons.text-icon') }}"
-            :active="request()->routeIs('buttons.text-icon')" />
-    </x-sidebar.dropdown> --}}
+        <x-sidebar.sublink title="Par Date" href="#"
+            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Par designation" href="#"
+            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Par categorie" href="#"
+            :active="request()->routeIs('#')" />
+    </x-sidebar.dropdown> 
 
-    {{-- <x-sidebar.dropdown title="Statistiques" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+
+        {{-- STATISTIQUES --}}
+
+    <x-sidebar.dropdown title="Statistiques" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Cout par Annee" href="{{ route('materiels.ajouter') }}"
-            :active="request()->routeIs('buttons.text')" />
-        <x-sidebar.sublink title="Cout par Categorie" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
+        <x-sidebar.sublink title="Cout par Annee" href="#"
+            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Cout par Categorie" href="#"
+            :active="request()->routeIs('#')" />
         
-    </x-sidebar.dropdown> --}}
+    </x-sidebar.dropdown>
        
 </x-perfect-scrollbar>
