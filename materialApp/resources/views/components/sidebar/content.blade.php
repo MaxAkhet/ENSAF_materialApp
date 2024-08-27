@@ -51,12 +51,12 @@
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Par Date" href="#"
-            :active="request()->routeIs('#')" />
-        <x-sidebar.sublink title="Par designation" href="#"
-            :active="request()->routeIs('#')" />
-        <x-sidebar.sublink title="Par categorie" href="#"
-            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Par Date" href="{{ route('materiels.datesearchAjax')}}"
+            :active="request()->routeIs('materiels.datesearchAjax')" />
+        <x-sidebar.sublink title="Par designation" href="{{ route('materiels.designsearchAjax')}}"
+            :active="request()->routeIs('materiels.designsearchAjax')" />
+        <x-sidebar.sublink title="Par categorie" href="{{ route('materiels.categorysearchAjax')}}"
+            :active="request()->routeIs('materiels.categorysearchAjax')" />
     </x-sidebar.dropdown> 
 
 

@@ -7,6 +7,56 @@ use Illuminate\Http\Request;
 
 class MaterielController extends Controller
 {
+    public function categorysearchAjax()
+    {
+        return view('Materiels.catsearch');
+    }
+
+    public function responsecategorysearchAjax(Request $request)
+    {
+        $category = $request->input('category');
+
+        // Filtrer par catégorie
+        $materiels = Materiel::where('Categorie', 'LIKE', "%{$category}%")->get();
+
+        // Retourner les résultats en JSON
+        return response()->json($materiels);
+    }
+
+    public function showDesignSearch()
+    {
+        return view('Materiels.designsearch');
+    }
+
+    public function designsearchAjax(Request $request)
+    {
+        $designation = $request->input('designation');
+
+        // Rechercher les matériels par désignation
+        $materiels = Materiel::where('Designation', 'LIKE', "%{$designation}%")->get();
+    
+        // Retourner les résultats en JSON
+        return response()->json($materiels);
+    }
+    public function showDateSearch()
+    {
+        return view('Materiels.datesearch');
+    }
+
+    public function datesearchAjax(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Filtrer par numéro d'ordre ou par désignation
+        $materiels = Materiel::where('Num_ordre', 'LIKE', "%{$query}%")
+            ->orWhere('Designation', 'LIKE', "%{$query}%")
+            ->get();
+
+        // Retourner les résultats en JSON
+        return response()->json($materiels);
+    }
+
+
     public function destroy($num_ordre)
     {
         $materiel = Materiel::where('Num_ordre', $num_ordre)->firstOrFail();

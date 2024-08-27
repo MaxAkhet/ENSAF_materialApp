@@ -50,5 +50,15 @@ Route::put('/materiels/{num_ordre}', [MaterielController::class, 'update'])->nam
 Route::get('/materiels/delselect', [MaterielController::class, 'delselect'])->name('materiels.delselect');
 Route::delete('/materiels/{num_ordre}', [MaterielController::class, 'destroy'])->name('materiels.destroy');
 
+// Recherche de Materiel
+Route::get('/materiels/datesearch-ajax', [MaterielController::class, 'showDateSearch'])->name('materiels.datesearchAjax');
+Route::get('/materiels/responsedatesearch-ajax', [MaterielController::class, 'datesearchAjax'])->name('materiels.responsedatesearchAjax');
+
+Route::get('/materiels/designsearch-ajax', [MaterielController::class, 'showDesignSearch'])->name('materiels.designsearchAjax');
+Route::get('/materiels/responsedesignsearch-ajax', [MaterielController::class, 'designsearchAjax'])->name('materiels.responsedesignsearchAjax');
+
+// Recherche par catégorie
+Route::get('/materiels/categorysearch-ajax', [MaterielController::class, 'categorysearchAjax'])->name('materiels.categorysearchAjax');
+Route::get('/materiels/responsecategorysearchAjax', [MaterielController::class, 'responsecategorysearchAjax'])->name('materiels.responsecategorysearchAjax');
 
 require __DIR__ . '/auth.php';
