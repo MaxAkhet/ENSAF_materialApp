@@ -40,6 +40,8 @@
             :active="request()->routeIs('materiels.edit' )" />
         <x-sidebar.sublink title="Supression de materiel" href="{{ route('materiels.delselect') }}"
             :active="request()->routeIs('materiels.delselect')" />
+        <x-sidebar.sublink title="Enregistrer une depense" href="{{ route('depenses.ajouter') }}"
+            :active="request()->routeIs('depenses.ajouter')" />
     </x-sidebar.dropdown>
 
 
@@ -67,10 +69,10 @@
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Cout par Annee" href="#"
-            :active="request()->routeIs('#')" />
-        <x-sidebar.sublink title="Cout par Categorie" href="#"
-            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Cout par Annee" href="{{ route('depenses.parAnnee')}}"
+            :active="request()->routeIs('depenses.parAnnee')" />
+        <x-sidebar.sublink title="Cout par Categorie" href="{{ route('depenses.parCategorie')}}"
+            :active="request()->routeIs('depenses.parCategorie')" />
         
     </x-sidebar.dropdown>
        

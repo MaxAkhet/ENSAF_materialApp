@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepenseController;
 use App\Http\Controllers\MaterielController;
 
 /*
@@ -61,4 +62,10 @@ Route::get('/materiels/responsedesignsearch-ajax', [MaterielController::class, '
 Route::get('/materiels/categorysearch-ajax', [MaterielController::class, 'categorysearchAjax'])->name('materiels.categorysearchAjax');
 Route::get('/materiels/responsecategorysearchAjax', [MaterielController::class, 'responsecategorysearchAjax'])->name('materiels.responsecategorysearchAjax');
 
+// Ajout d'une depense
+Route::get('/depenses/create', [DepenseController::class, 'create'])->name('depenses.ajouter');
+Route::post('/depenses', [DepenseController::class, 'store'])->name('depenses.store');
+// Statistiques
+Route::get('/depenses/annees', [DepenseController::class, 'getDepensesParAnnee'])->name('depenses.parAnnee');
+Route::get('/depenses/annees-categories', [DepenseController::class, 'getDepensesParAnneeEtCategorie'])->name('depenses.parCategorie');
 require __DIR__ . '/auth.php';

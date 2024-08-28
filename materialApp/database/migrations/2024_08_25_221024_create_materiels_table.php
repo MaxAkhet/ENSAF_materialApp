@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Materiels', function (Blueprint $table) {
+        Schema::create('materiels', function (Blueprint $table) {
             $table->increments('Num_ordre'); // Clé primaire auto-incrémentée
             $table->string('Departement');
             $table->string('Categorie');
